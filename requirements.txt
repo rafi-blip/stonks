@@ -1,3 +1,4 @@
 flask-mobility
 flask-socketio
 flask
+gunicorn
