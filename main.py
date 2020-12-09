@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, session, redirect
 from flask_socketio import SocketIO
 from flask_mobility import Mobility
 import threading
-from replit import db
+from replitt import db
 import requests
 import logging
 import hashlib
