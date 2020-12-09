@@ -312,6 +312,6 @@ def s_transfer(json):
 if __name__ == '__main__':
     x = threading.Thread(target=stonks.runner)
     x.start()
-    
+     
     socketio.run(app=app, host='0.0.0.0', port=8080)
     #app.run(host='0.0.0.0', port=8080)
