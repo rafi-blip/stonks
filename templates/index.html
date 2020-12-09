@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--
+    TODO: fix check password match and show pw toggle
+-->
+
+<h1>Stonks</h1>
+<hr>
+
+{% for m in msgs %}
+<h2 style='color: red'>{{ m }}</h2>
+{% endfor %}
+
+<div style='display: flex; align-items: center'>
+    <button onclick='$("#login").toggle()'>Login</button>
+    <button onclick='$("#signup").toggle()'>Signup</button>
+</div>
+
+<h3>Use promo code <code>beta</code> for an extra $5!</h3>
+
+<form id='login' action='/login' method='POST' style='display: none'>
+    <label for='username'>Username:</label>
+    <input name='username'>
+    <br>
+    <label for='password'>Password:</label>
+    <input name='password' type='password'>
+    <br>
+    <button type="submit">Login</button>
+</form>
+
+<form id='signup' action='/signup' method='POST' style='display: none' onsubmit='validate()'>
+    <label for='username'>Username:</label>
+    <input name='username'>
+    <br>
+    <label for='password'>Password:</label>
+    <input name='password' type='password'>
+    <input type='checkbox' onclick="togglePw(this)"> Show password
+    <br>
+    <button type="submit">Signup</button>
+</form>
+
+<script>
+    function vaildate(event) {
+        form = $('#signup');
+        if (!form.find('input[name=password]').val() == form.find('input[name=confirm_password]').val()) {
+            event.preventDefault();
+            $('#pw_confirm').text("Passwords don't match");
+        }
+    }
+
+    function togglePw(cb) {
+        pwbox = $('#signup').find('input[name=password]')[0];
+        if ($(cb).is(":checked")) {
+            pwbox.type = 'text';
+        } else {
+            pwbox.type = 'password';
+        }
+    }
+</script>
+
+{% endblock %}

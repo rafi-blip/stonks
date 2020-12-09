@@ -1,0 +1,5 @@
+- index page show password only shows, doesn't hide back
+- desktop/main countdown twice sometimes???
+- rounding error
+- sometimes steals money
+- doesnt let josh bet

@@ -1,0 +1,3 @@
+- adfly for money
+- crates (money and powerups)
+- powerups - eg: see what itll land on, get half your bet back if you lose, double winnings, steal someone's bet
