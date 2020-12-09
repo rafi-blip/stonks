@@ -2,3 +2,5 @@ flask-mobility
 flask-socketio
 flask
 gunicorn
+requests
+numpy
